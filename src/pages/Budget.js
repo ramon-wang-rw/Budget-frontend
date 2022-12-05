@@ -38,7 +38,7 @@ export default function Budget() {
 
 
     async function populateBudget() {
-        const req = await fetch('http://localhost:5000/api/getBudget', {
+        const req = await fetch('https://budget-api-utu0.onrender.com/api/getBudget', {
 			headers: {
 				'x-access-token': localStorage.getItem('token'),
 			},
@@ -56,7 +56,7 @@ export default function Budget() {
     async function addBudget(event) {
         event.preventDefault();
         const id = uuidv4();
-        const response = await fetch('http://localhost:5000/api/addBudget', {
+        const response = await fetch('https://budget-api-utu0.onrender.com/api/addBudget', {
             method:'POST',
             headers: {
 				'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ export default function Budget() {
     }
 
     async function deleteBudget(id) {
-        const response = await fetch('http://localhost:5000/api/deleteBudget', {
+        const response = await fetch('https://budget-api-utu0.onrender.com/api/deleteBudget', {
             method:'POST',
             headers: {
 				'Content-Type': 'application/json',
@@ -116,7 +116,7 @@ export default function Budget() {
     }
 
     async function updateBudget(id) {
-        const response = await fetch('http://localhost:5000/api/updateBudget', {
+        const response = await fetch('https://budget-api-utu0.onrender.com/api/updateBudget', {
             method:'POST',
             headers: {
 				'Content-Type': 'application/json',
